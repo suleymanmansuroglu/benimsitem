@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+
+  <meta
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    name="viewport"
+  />
+
+  <title>Temel Yazılım Tasarım İlkeleri: Yol Haritası | Süleyman Mansuroğlu</title>
+
+  <meta property="og:title" content="Temel Yazılım Tasarım İlkeleri: Yol Haritası | Süleyman Mansuroğlu" />
+
+  <meta property="og:locale" content="en_US" />
+
+  <link
+    rel="canonical"
+    href="//post"
+  />
+
+  <meta
+    property="og:url"
+    content="//post"
+  />
+
+  <meta
+    name="description"
+    content="Bu kısa yazıda, anlaşılabilir ve ölçeklenebilir kod yapılarının temel prensipleri keşfedeceğiz."
+  />
+
+  <link rel="icon" type="image/png" href="/assets/img/617F7F.ico" />
+
+  <meta name="theme-color" content="#5540af" />
+
+  <meta property="og:site_name" content="Süleyman Mansuroğlu" />
+
+
+
+  <link
+    crossorigin="crossorigin"
+    href="https://fonts.gstatic.com"
+    rel="preconnect"
+  />
+
+  <link
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@400;500;600;700&display=swap"
+    rel="preload"
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+    rel="stylesheet"
+  />
+
+  <link
+    crossorigin="anonymous"
+    href="/assets/styles/main.min.css"
+    media="screen"
+    rel="stylesheet"
+  />
+  
+  <script
+    defer
+    src="https://unpkg.com/@alpine-collective/toolkit@1.0.0/dist/cdn.min.js"
+  ></script>
+
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/atom-one-dark.min.css"
+  />
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+
+  <script>
+    hljs.highlightAll();
+  </script>
+  
+</head>
+
+
+  <body
+    :class="{ 'overflow-hidden max-h-screen': mobileMenu }"
+    class="relative"
+    x-data="{ mobileMenu: false }"
+  >
+    
+    <div id="main" class="relative">
+      <div
+  x-data="{
+    triggerNavItem(id) {
+        $scroll(id)
+    },
+    triggerMobileNavItem(id) {
+        mobileMenu = false;
+        this.triggerNavItem(id)
+    }
+}"
+>
+  <div class="w-full z-50 top-0 py-3 sm:py-5  bg-primary ">
+  <div class="container flex items-center justify-between">
+    <div>
+      <a href="/">
+        <img src="/assets/img/617F7F.png" style="height: auto; width: 4rem; border-radius: 25px;" class="" alt="logo image" />
+      </a>
+    </div>
+    <div class="hidden lg:block">
+      <ul class="flex items-center">
+        
+        <li class="group pl-6">
+          
+          <a
+            href="/#about"
+            class="cursor-pointe pt-0.5 font-header font-semibold uppercase text-white"
+            >About</a
+          >
+          
+          <span
+            class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"
+          ></span>
+        </li>
+        
+        <li class="group pl-6">
+          
+          <a
+            href="/#services"
+            class="cursor-pointe pt-0.5 font-header font-semibold uppercase text-white"
+            >Tech Skills</a
+          >
+          
+          <span
+            class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"
+          ></span>
+        </li>
+        
+        <li class="group pl-6">
+          
+          <a
+            href="/#portfolio"
+            class="cursor-pointe pt-0.5 font-header font-semibold uppercase text-white"
+            >Portfolio</a
+          >
+          
+          <span
+            class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"
+          ></span>
+        </li>
+        
+        <li class="group pl-6">
+          
+          <a
+            href="/#clients"
+            class="cursor-pointe pt-0.5 font-header font-semibold uppercase text-white"
+            >Clients</a
+          >
+          
+          <span
+            class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"
+          ></span>
+        </li>
+        
+        <li class="group pl-6">
+          
+          <a
+            href="/#work"
+            class="cursor-pointe pt-0.5 font-header font-semibold uppercase text-white"
+            >Work</a
+          >
+          
+          <span
+            class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"
+          ></span>
+        </li>
+        
+        <li class="group pl-6">
+          
+          <a
+            href="/#statistics"
+            class="cursor-pointe pt-0.5 font-header font-semibold uppercase text-white"
+            >Statistics</a
+          >
+          
+          <span
+            class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"
+          ></span>
+        </li>
+        
+        <li class="group pl-6">
+          
+          <a
+            href="/#blog"
+            class="cursor-pointe pt-0.5 font-header font-semibold uppercase text-white"
+            >Blog</a
+          >
+          
+          <span
+            class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"
+          ></span>
+        </li>
+        
+        <li class="group pl-6">
+          
+          <a
+            href="/#contact"
+            class="cursor-pointe pt-0.5 font-header font-semibold uppercase text-white"
+            >Contact</a
+          >
+          
+          <span
+            class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"
+          ></span>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="block lg:hidden">
+      <button @click="mobileMenu = true">
+        <i class="bx bx-menu text-4xl text-white"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div
+  class="pointer-events-none fixed inset-0 z-70 min-h-screen bg-black bg-opacity-70 opacity-0 transition-opacity lg:hidden"
+  :class="{ 'opacity-100 pointer-events-auto': mobileMenu }"
+>
+  <div
+    class="absolute right-0 min-h-screen w-2/3 bg-primary py-4 px-8 shadow md:w-1/3"
+  >
+    <button
+      class="absolute top-0 right-0 mt-4 mr-4"
+      @click="mobileMenu = false"
+    >
+      <img src="/assets/img/icon-close.svg" class="h-10 w-auto" alt="" />
+    </button>
+
+    <ul class="mt-8 flex flex-col">
+      
+      <li class="py-2">
+        
+        <a
+          href="/#about"
+          class="pt-0.5 font-header font-semibold uppercase text-white"
+          >About</a
+        >
+        
+      </li>
+      
+      <li class="py-2">
+        
+        <a
+          href="/#services"
+          class="pt-0.5 font-header font-semibold uppercase text-white"
+          >Tech Skills</a
+        >
+        
+      </li>
+      
+      <li class="py-2">
+        
+        <a
+          href="/#portfolio"
+          class="pt-0.5 font-header font-semibold uppercase text-white"
+          >Portfolio</a
+        >
+        
+      </li>
+      
+      <li class="py-2">
+        
+        <a
+          href="/#clients"
+          class="pt-0.5 font-header font-semibold uppercase text-white"
+          >Clients</a
+        >
+        
+      </li>
+      
+      <li class="py-2">
+        
+        <a
+          href="/#work"
+          class="pt-0.5 font-header font-semibold uppercase text-white"
+          >Work</a
+        >
+        
+      </li>
+      
+      <li class="py-2">
+        
+        <a
+          href="/#statistics"
+          class="pt-0.5 font-header font-semibold uppercase text-white"
+          >Statistics</a
+        >
+        
+      </li>
+      
+      <li class="py-2">
+        
+        <a
+          href="/#blog"
+          class="pt-0.5 font-header font-semibold uppercase text-white"
+          >Blog</a
+        >
+        
+      </li>
+      
+      <li class="py-2">
+        
+        <a
+          href="/#contact"
+          class="pt-0.5 font-header font-semibold uppercase text-white"
+          >Contact</a
+        >
+        
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+      <div><div class="container py-6 md:py-10">
+  <div class="mx-auto max-w-4xl">
+    <div class="">
+      <h1
+        class="pt-5 font-body text-3xl font-semibold text-primary sm:text-4xl md:text-5xl xl:text-6xl"
+      >
+      Temel Yazılım Tasarım İlkeleri: Yol Haritası
+      </h1>
+      <div class="flex items-center pt-5 md:pt-10">
+        <div>
+          <img
+            src="/assets/img/pp.png"
+            class="w-24 rounded-full border-4 border-grey-70 shadow"
+            style="background-color: rgba(00, 44, 77, 0.5);"
+            alt="author image"
+          />
+        </div>
+        <div class="pl-5">
+          <span class="block font-body text-xl font-bold text-grey-10"
+            >Süleyman Mansuroğlu</span
+          >
+          <span class="block pt-1 font-body text-xl font-bold text-grey-30"
+            >27 Şubat 2024</span
+          >
+        </div>
+      </div>
+    </div>
+      <p class="mb-4 mt-4">Selamalar, bu yazıda sağlam kod oluşturmanın temel ilkelerine göz atacağız. Yazılım geliştirme denizinde yönümüzü bulmak için kılavuz niteliğindeki bu prensipleri inceleyelim.</p>
+
+      <h2 class="text-xl font-semibold mb-2">SOLID Prensipleri:</h2>
+      <ul class="list-disc pl-8 mb-4">
+          <li><strong>Tek Sorumluluk Prensibi (SRP):</strong> Her sınıfın tek bir görevi olmalıdır. Bu, kodun netliğini ve bakım kolaylığını artırır.</li>
+          <li><strong>Açık/Kapalı Prensibi (OCP):</strong> Yazılımın genişletmeye açık, ancak değiştirmeye kapalı olması gerekir. Bu, kodun esnekliğini sağlar.</li>
+          <li><strong>Liskov Yerine Koyma Prensibi (LSP):</strong> Alt sınıfların nesneleri, üst sınıfların nesneleriyle sorunsuz bir şekilde yer değiştirebilmelidir.</li>
+          <li><strong>Arayüz Ayrımı Prensibi (ISP):</strong> İstemciler, kullanmadıkları arayüzlerden etkilenmemelidir. Bu, bağımlılığı azaltır.</li>
+          <li><strong>Bağımlılık Tersine Çevirme Prensibi (DIP):</strong> Üst seviye modüller, düşük seviye modüllere değil, soyutlamalara bağlı olmalıdır. Bu, esneklik sağlar ve bağımlılığı azaltır.</li>
+      </ul>
+
+      <h2 class="text-xl font-semibold mb-2">Basitlik Prensibi:</h2>
+      <p class="mb-4"><strong>KISS Prensibi (Keep It Simple, Stupid):</strong> Tasarım ve uygulama süreçlerinde basitliği hedefleyin.</p>
+
+      <h2 class="text-xl font-semibold mb-2">Tekrarı Önleme:</h2>
+      <p class="mb-4"><strong>DRY Prensibi (Don't Repeat Yourself):</strong> Kod tekrarını önleyerek, ortak işlevselliği tek bir yerde birleştirin.</p>
+
+      <h2 class="text-xl font-semibold mb-2">Pratik Yaklaşım:</h2>
+      <p class="mb-4"><strong>YAGNI Prensibi (You Ain't Gonna Need It):</strong> Şu an için gerekli olmayan özellikler üzerinde gereksiz zaman harcamayın.</p>
+
+      <p class="mb-4 mt-4">Bu prensipler, sağlam ve sürdürülebilir yazılım geliştirmenin temel taşlarıdır. SOLID prensipleriyle mimari sağlamlığını, basitlik ve DRY prensipleriyle kod kalitesini ve YAGNI prensibiyle gereksiz karmaşıklığı önemseyerek, daha etkili ve verimli yazılımlar oluşturabilirsiniz.</p>
+      <p class="mb-4 mt-4">Bu yazıda genel bir bakış olarak açıklamaya çalıştığım bu prensiplerin detaylı açıklaması ve örneklerini diğer yazılarda bulabilirsiniz.</p>
+
+<!-- <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fonts.forEach(font =&gt; {
+  const { id, name, likes } = font;
+  if (
+    likes &gt;= 30
+    || (likes === 50 &amp;&amp; likes != 0)
+    || favorites[id]
+  ) {
+    coolFonts++;
+    console.log(`${name} is cool!`);
+  }
+});
+</code></pre></div></div> -->
+
+</div>
+
+    <div class="mt-10 flex justify-between border-t border-lila py-12">
+      <a href="/" class="flex items-center">
+        <i class="bx bx-left-arrow-alt text-2xl text-primary"></i>
+        <span
+          class="block pl-2 font-body text-lg font-bold uppercase text-primary md:pl-5"
+          >Öncekİ</span
+        >
+      </a>
+      <a href="/" class="flex items-center">
+        <span
+          class="block pr-2 font-body text-lg font-bold uppercase text-primary md:pr-5"
+          >Sonrakİ</span
+        >
+        <i class="bx bx-right-arrow-alt text-2xl text-primary"></i>
+      </a>
+    </div>
+ 
+
+    </div>
+  </div>
+</div>
+</div>
+
+      <div class="bg-primary">
+  <div class="container flex flex-col justify-between py-6 sm:flex-row">
+
+   
+  </div>
+</div>
+
+    </div>
+
+    <script src="/assets/js/main.js"></script>
+
+    
+  </body>
+</html>
